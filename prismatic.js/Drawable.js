@@ -8,6 +8,8 @@ var Drawable = new JS.Class({
     	this.x = argObj.x || 0;
     	this.y = argObj.y || 0;
     	this.parent = argObj.parent || null;
+
+    	this.eventListeners = {};
     },
 
     draw: function(context) {
@@ -34,6 +36,13 @@ var Drawable = new JS.Class({
 
 	onClick: function(event) {
 		console.log('clicked');
-	}
+	},
 
+	on: function(argObj) {
+		var event = argObj.event || {};
+		var callback = argObj.callback || function() {};
+		var callbackArgObject = argObj.callbackArgObject || {};
+
+		this.eventListeners.event = { callback: callback, argObj : callbackArgObject};
+	},
 });

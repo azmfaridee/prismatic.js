@@ -53,6 +53,14 @@ JS.require('JS.Hash',
 		radius: 100,
 		fillColor: '#223377'
 	});
+
+	circle.on({
+		event: 'click',
+		callback: function() {
+			console.log('clicked on circle');
+		}
+	});
+
 	baseLayer.addDrawable(circle);
 
 	// howto add empty lines 
