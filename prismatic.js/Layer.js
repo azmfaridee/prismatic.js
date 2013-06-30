@@ -8,7 +8,7 @@ var Layer = new JS.Class(Drawable, {
 		// TODO: fix this hack of automatic argObj creation
 		if (argObj === undefined) {argObj = {}};
 		this.callSuper(argObj)
-		
+
 		this.depth = argObj.depth || 0;
 		this.drawables = [];
 	},
@@ -26,5 +26,11 @@ var Layer = new JS.Class(Drawable, {
 	},
 
 	removeDrawable: function(argObj) {
+	},
+
+	onClick: function(event) {
+		for (var i = 0; i < this.drawables.length; i++) {
+			this.drawables[i].onClick(event);
+		}
 	}
 });

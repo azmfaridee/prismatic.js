@@ -32,6 +32,8 @@ var Drawable = new JS.Class({
 
 	hitTest: function(event) {},
 
-	onClick: function(event) {}
+	onClick: function(event) {
+		console.log('clicked');
+	}
 
 });
