@@ -57,6 +57,7 @@ var Prismatic = new JS.Class({
 
     addLayer: function(layer) {
     	this.layers.push(layer);
+        layer.parent = this;
     	// TODO: sort layers according to depth
     }
 });

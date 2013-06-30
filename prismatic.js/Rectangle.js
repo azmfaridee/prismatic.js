@@ -2,11 +2,11 @@ var Rectangle = new JS.Class(Drawable, {
 	// constructor
     initialize: function(argObj) {
     	this.callSuper(argObj);
-    	this.height = argObj.height;
-    	this.width = argObj.width;
-    	this.fillColor = argObj.fillColor;
-    	this.strokeColor = argObj.strokeColor;
-    	this.strokeWidth = argObj.strokeWidth;
+    	this.height = argObj.height || 50;
+    	this.width = argObj.width || 100;
+    	this.strokeColor = argObj.strokeColor || 'black';
+    	this.strokeWidth = argObj.strokeWidth || 1;
+    	this.fillColor = argObj.fillColor || 'red';
     },
 
 	draw: function(context) {
@@ -19,7 +19,7 @@ var Rectangle = new JS.Class(Drawable, {
 		context.fill();
 		context.lineWidth = this.strokeWidth;
 		context.strokeStyle = this.strokeColor;
-		
+
 		context.stroke();
 	},
 });

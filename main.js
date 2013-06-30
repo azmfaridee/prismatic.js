@@ -43,6 +43,5 @@ JS.require('JS.Hash',
 	baseLayer.addDrawable(line);
 
 	prismatic.addLayer(baseLayer);
-
 	console.log('TAKING PRISMATIC CORE OFFLINE!!');
 });

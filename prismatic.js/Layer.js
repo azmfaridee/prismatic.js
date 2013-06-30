@@ -5,7 +5,11 @@ var Layer = new JS.Class(Drawable, {
 	// then in any particular order
 
 	initialize: function(argObj) {
-		this.depth = 0;
+		// TODO: fix this hack of automatic argObj creation
+		if (argObj === undefined) {argObj = {}};
+		this.callSuper(argObj)
+		
+		this.depth = argObj.depth || 0;
 		this.drawables = [];
 	},
 
@@ -18,6 +22,7 @@ var Layer = new JS.Class(Drawable, {
 
 	addDrawable: function(drawable) {
 		this.drawables.push(drawable);
+		drawable.parent = this;
 	},
 
 	removeDrawable: function(argObj) {

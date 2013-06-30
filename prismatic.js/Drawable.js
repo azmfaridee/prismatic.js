@@ -4,9 +4,12 @@
 */
 var Drawable = new JS.Class({
     initialize: function(argObj) {
-    	this.x = argObj.x;
-    	this.y = argObj.y;
-    	this.position = 'absolute';
+    	this.position = argObj.position || 'absolute';
+    	this.x = argObj.x || 0;
+    	this.y = argObj.y || 0;
+    	this.parent = argObj.parent || null;
+    	this.strokeColor = argObj.strokeColor || 'black';
+    	this.strokeWidth = argObj.strokeWidth || 1;
     },
 
     draw: function(context) {
@@ -14,9 +17,9 @@ var Drawable = new JS.Class({
     },
 
 	setProperty: function(argObj) {
-		this.x = argObj.x;
-		this.y = argObj.y;
-		this.position = argObj.position;
+		this.x = argObj.x || this.x;
+		this.y = argObj.y || this.y;
+		this.position = argObj.position || this.position;
 	},
 
 	changeLayer: function(argObj) {
