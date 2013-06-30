@@ -8,12 +8,12 @@ var Prismatic = new JS.Class({
     	this.layers = [];
 	},
 
-    configure: function(arg) {
-    	this.canvas = arg.canvas;
-    	this.width = arg.width;
-    	this.height = arg.height;
-    	this.backgroundColor = arg.backgroundColor;
-    	this.frameRate = arg.frameRate;
+    configure: function(argObj) {
+    	this.canvas = argObj.canvas;
+    	this.width = argObj.width;
+    	this.height = argObj.height;
+    	this.backgroundColor = argObj.backgroundColor;
+    	this.frameRate = argObj.frameRate;
     	// init the canvas
     	
     	// init the frame rate

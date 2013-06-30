@@ -14,7 +14,6 @@ JS.require('JS.Hash',
 	});
 
 	var baseLayer = new Layer();
-	prismatic.addLayer(baseLayer);
 
 	var rect = new Rectangle({
 		x: 100,
@@ -30,7 +29,9 @@ JS.require('JS.Hash',
 		y: 200,
 		position: 'absolute'
 	});
-	rect.changeLayer();
+
+	baseLayer.add(rect);
+	prismatic.addLayer(baseLayer);
 
 	console.log(JSON.stringify(rect, null, 2));
 	console.log('End of program');

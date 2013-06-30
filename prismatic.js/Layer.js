@@ -1,9 +1,9 @@
 var Layer = new JS.Class(Drawable, {
-	initialize: function(arg) {
+	initialize: function(argObj) {
 		this.depth = 0;
 	},
 
-	draw: function(arg) {
+	draw: function(argObj) {
 		// override drawable draw function
 	},
 
