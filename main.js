@@ -41,9 +41,6 @@ JS.require('JS.Hash',
 		strokeColor: 'blue',
 		strokeWidth: 2
 	});
-
-	console.log(JSON.stringify(line, null, 2));
-
 	baseLayer.addDrawable(line);
 	prismatic.addLayer(baseLayer);
 

@@ -7,10 +7,9 @@ var Rectangle = new JS.Class(Drawable, {
     	this.fillColor = argObj.fillColor;
     	this.strokeColor = argObj.strokeColor;
     	this.strokeWidth = argObj.strokeWidth;
-    	this.position = 'absolute';
     },
 
-	draw: function(argObj) {
-		// override drawable draw function
+	draw: function(context) {
+		this.callSuper(context);
 	},
 });

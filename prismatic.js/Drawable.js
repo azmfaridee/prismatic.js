@@ -9,8 +9,8 @@ var Drawable = new JS.Class({
     	this.position = 'absolute';
     },
 
-    draw: function(argObj) {
-    	// base draw function
+    draw: function(context) {
+    	this.context = context;
     },
 
 	setProperty: function(argObj) {
