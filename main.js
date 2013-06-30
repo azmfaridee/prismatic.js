@@ -1,7 +1,5 @@
 JS.require('JS.Hash',
 	'JS.Observable',
-	'Animal',
-	'Cat',
 	'Prismatic',
 	'Drawable',
 	'Layer',
