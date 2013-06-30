@@ -13,7 +13,8 @@ var Drawable = new JS.Class({
     	// base draw function
     },
 
-	setPosition: function(argObj) {
+	setProperty: function(argObj) {
+		// will be used to set any custom property		
 		this.x = argObj.x;
 		this.y = argObj.y;
 		this.position = argObj.position;

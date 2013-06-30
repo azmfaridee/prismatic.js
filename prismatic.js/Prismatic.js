@@ -22,7 +22,6 @@ var Prismatic = new JS.Class({
         canvas.height = this.height;
         canvas.width = this.width;
         var context = this.context = this.canvas.getContext('2d');
-        console.log(canvas);
 
     	// init the frame rate
     	

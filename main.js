@@ -15,24 +15,24 @@ JS.require('JS.Hash',
 
 	var baseLayer = new Layer();
 
-	var rect = new Rectangle({
-		x: 100,
-		y: 100,
-		height: 100,
-		width: 100,
-		fillColor: 'red',
-		strokeColor: 'blue',
-		strokeWidth: 2
-	});
-	rect.setPosition({
-		x: 200,
-		y: 200,
-		position: 'absolute'
-	});
+	// var rect = new Rectangle({
+	// 	x: 100,
+	// 	y: 100,
+	// 	height: 100,
+	// 	width: 100,
+	// 	fillColor: 'red',
+	// 	strokeColor: 'blue',
+	// 	strokeWidth: 2
+	// });
+	// rect.setProperty({
+	// 	x: 200,
+	// 	y: 200,
+	// 	position: 'absolute'
+	// });
+	// console.log(JSON.stringify(rect, null, 2));
+	// baseLayer.add(rect);
 
-	baseLayer.add(rect);
 	prismatic.addLayer(baseLayer);
 
-	console.log(JSON.stringify(rect, null, 2));
-	console.log('End of program');
+	console.log('TAKING PRISMATIC CORE OFFLINE!!');
 });
