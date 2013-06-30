@@ -62,13 +62,40 @@ var Prismatic = new JS.Class({
     },
 
     initializeEventListeners: function() {
-        // TODO: other event types and listeners
         var that = this;
         this.canvas.addEventListener('click', function (event) {
-            for (var i = 0; i < that.layers.length; i++) {
-                that.layers[i].onClick(event);
-            }
+            // console.log('click (' + event.x + ', ' + event.y + ')');
+            // for (var i = 0; i < that.layers.length; i++) {
+            //     that.layers[i].onClick(event);
+            // }
         });
+
+        this.canvas.addEventListener('mousemove', function (event) {
+            // console.log('mousemove (' + event.x + ', ' + event.y + ')');
+        });
+
+        /*
+
+        // Other helpful event listeners, we don't need to enable them for the
+        // time being
+
+        this.canvas.addEventListener('mousedown', function (event) {
+            // console.log('mousedown (' + event.x + ', ' + event.y + ')');
+        });
+
+        this.canvas.addEventListener('mouseup', function (event) {
+            // console.log('mouseup (' + event.x + ', ' + event.y + ')');
+        });
+
+        this.canvas.addEventListener('mouseover', function (event) {
+            console.log('mouseover (' + event.x + ', ' + event.y + ')');
+        });
+
+        this.canvas.addEventListener('mouseout', function (event) {
+            console.log('mouseout (' + event.x + ', ' + event.y + ')');
+        });
+
+        */
     },
 
     addLayer: function(layer) {
