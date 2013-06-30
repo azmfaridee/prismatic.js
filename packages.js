@@ -15,6 +15,11 @@ JS.Packages(function() {
         file('prismatic.js/Rectangle.js')
         	.provides('Rectangle')
         	.requires('Prismatic')
-        	.requires('Drawable');        
+        	.requires('Drawable');
+
+        file('prismatic.js/Line.js')
+            .provides('Line')
+            .requires('Prismatic')
+            .requires('Drawable');
     }
 });

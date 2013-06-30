@@ -3,7 +3,8 @@ JS.require('JS.Hash',
 	'Prismatic',
 	'Drawable',
 	'Layer',
-	'Rectangle', function() {
+	'Rectangle',
+	'Line', function() {
 	
 	prismatic.configure({
 		canvasId: 'myCanvas',
@@ -32,6 +33,18 @@ JS.require('JS.Hash',
 	// console.log(JSON.stringify(rect, null, 2));
 	// baseLayer.add(rect);
 
+	var line = new Line({
+		x: 100,
+		y: 150,
+		x2: 450,
+		y2: 50,
+		strokeColor: 'blue',
+		strokeWidth: 2
+	});
+
+	console.log(JSON.stringify(line, null, 2));
+
+	baseLayer.addDrawable(line);
 	prismatic.addLayer(baseLayer);
 
 	console.log('TAKING PRISMATIC CORE OFFLINE!!');
