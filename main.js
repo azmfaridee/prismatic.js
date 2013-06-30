@@ -15,20 +15,24 @@ JS.require('JS.Hash',
 		frameRate: 24,
 	});
 
-	var baseLayer = new Layer();
+	var baseLayer = new Layer({
+		depth: 0
+	});
+
+	var upperLayer = new Layer({
+		depth: 1
+	});
 
 	var rect = new Rectangle({
-		x: 100,
-		y: 100,
-		height: 100,
-		width: 200,
+		height: 150,
+		width: 300,
 		fillColor: '#aa6633',
-		strokeColor: 'green',
+		strokeColor: '995522',
 		strokeWidth: 4
 	});
 	rect.setProperty({
-		x: 200,
-		y: 200,
+		x: 100,
+		y: 150,
 		position: 'absolute'
 	});
 	baseLayer.addDrawable(rect);
@@ -41,7 +45,7 @@ JS.require('JS.Hash',
 		strokeColor: '#aa6633',
 		strokeWidth: 4
 	});
-	baseLayer.addDrawable(line);
+	upperLayer.addDrawable(line);
 
 	var circle = new Circle({
 		x: 100,
@@ -59,5 +63,6 @@ JS.require('JS.Hash',
 	// baseLayer.addDrawable(rect2);
 
 	prismatic.addLayer(baseLayer);
+	prismatic.addLayer(upperLayer);
 	console.log('TAKING PRISMATIC CORE OFFLINE!!');
 });

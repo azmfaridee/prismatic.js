@@ -8,8 +8,6 @@ var Drawable = new JS.Class({
     	this.x = argObj.x || 0;
     	this.y = argObj.y || 0;
     	this.parent = argObj.parent || null;
-    	this.strokeColor = argObj.strokeColor || 'black';
-    	this.strokeWidth = argObj.strokeWidth || 1;
     },
 
     draw: function(context) {
