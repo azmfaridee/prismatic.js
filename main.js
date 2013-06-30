@@ -38,6 +38,12 @@ JS.require('JS.Hash',
 		y: 150,
 		position: 'absolute'
 	});
+	rect.on({
+		eventType: 'click',
+		callback: function() {
+			console.log('rectangle clicked');
+		}
+	});
 	baseLayer.addDrawable(rect);
 
 	var line = new Line({

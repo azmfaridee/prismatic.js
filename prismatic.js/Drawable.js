@@ -37,8 +37,12 @@ var Drawable = new JS.Class({
 	},
 
 	onClick: function(event) {
-		var callback = this.eventListeners.click.callback;
-		var argObj =this.eventListeners.click.argObj;
+		var callback = function () {};
+		var argObj = {}
+		if (this.eventListeners.click !== undefined) {
+			callback = this.eventListeners.click.callback;
+			argObj =this.eventListeners.click.argObj;
+		}
 		callback(argObj);
 	},
 
