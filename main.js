@@ -6,7 +6,7 @@ JS.require('JS.Hash',
 	'Rectangle', function() {
 	
 	prismatic.configure({
-		canvas: 'myCanvas',
+		canvasId: 'myCanvas',
 		width: 640,
 		height: 480,
 		backgroundColor: 'white',

@@ -1,21 +1,29 @@
 var Prismatic = new JS.Class({
 	initialize: function() {
-    	this.canvas = 'canvas';
+    	this.canvasId = null;
+        this.canvas = null;
     	this.width = 640;
     	this.height = 480;
     	this.backgroundColor = 'white';
     	this.frameRate = 24;
     	this.layers = [];
+        this.context = null;
 	},
 
     configure: function(argObj) {
-    	this.canvas = argObj.canvas;
+    	this.canvasId = argObj.canvasId;
     	this.width = argObj.width;
     	this.height = argObj.height;
     	this.backgroundColor = argObj.backgroundColor;
     	this.frameRate = argObj.frameRate;
+
     	// init the canvas
-    	
+        var canvas = this.canvas = document.getElementById(this.canvasId);
+        canvas.height = this.height;
+        canvas.width = this.width;
+        var context = this.context = this.canvas.getContext('2d');
+        console.log(canvas);
+
     	// init the frame rate
     	
     	// init the layer
@@ -28,5 +36,5 @@ var Prismatic = new JS.Class({
 });
 
 window.prismatic = new Prismatic();
-console.log('Prismatic core online');
+console.log('PRISMATIC CORE ONLINE!');
 
