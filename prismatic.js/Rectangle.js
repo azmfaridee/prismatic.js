@@ -22,4 +22,8 @@ var Rectangle = new JS.Class(Drawable, {
 
 		context.stroke();
 	},
+
+	performHitTest: function (event) {
+		return false;
+	},
 });

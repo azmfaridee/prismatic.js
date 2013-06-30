@@ -30,7 +30,13 @@ var Layer = new JS.Class(Drawable, {
 
 	onClick: function(event) {
 		for (var i = 0; i < this.drawables.length; i++) {
-			this.drawables[i].onClick(event);
+			if (this.drawables[i].performHitTest(event) === true) {
+				this.drawables[i].onClick(event);	
+			}
 		}
+	},
+
+	performHitTest: function () {
+		return true;
 	}
 });

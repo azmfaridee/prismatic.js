@@ -32,18 +32,22 @@ var Drawable = new JS.Class({
 		// ALGO END
 	},
 
-	hitTest: function(event) {},
+	performHitTest: function(event) {
+		return false;
+	},
 
-	// todo, need to fix this
 	onClick: function(event) {
-		console.log('clicked');
+		var callback = this.eventListeners.click.callback;
+		var argObj =this.eventListeners.click.argObj;
+		callback(argObj);
 	},
 
 	on: function(argObj) {
-		var event = argObj.event || {};
+		var eventType = argObj.eventType || {};
 		var callback = argObj.callback || function() {};
 		var callbackArgObject = argObj.callbackArgObject || {};
 
-		this.eventListeners.event = { callback: callback, argObj : callbackArgObject};
+		this.eventListeners[eventType] = { callback: callback, argObj : callbackArgObject};
+
 	},
 });

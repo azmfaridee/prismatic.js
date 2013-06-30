@@ -58,9 +58,14 @@ JS.require('JS.Hash',
 	});
 
 	circle.on({
-		event: 'click',
-		callback: function() {
-			console.log('clicked on circle');
+		eventType: 'click',
+		callback: function(argObj) {
+			console.log(argObj.a + ' ' + argObj.b + ' ' + argObj.c);
+		},
+		callbackArgObject: {
+			a: 'Clicked',
+			b: 'inside',
+			c: 'circle'
 		}
 	});
 

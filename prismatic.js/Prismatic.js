@@ -65,9 +65,11 @@ var Prismatic = new JS.Class({
         var that = this;
         this.canvas.addEventListener('click', function (event) {
             // console.log('click (' + event.x + ', ' + event.y + ')');
-            // for (var i = 0; i < that.layers.length; i++) {
-            //     that.layers[i].onClick(event);
-            // }
+            for (var i = 0; i < that.layers.length; i++) {
+                if (that.layers[i].performHitTest(event) === true) {
+                    that.layers[i].onClick(event);    
+                }
+            }
         });
 
         this.canvas.addEventListener('mousemove', function (event) {
