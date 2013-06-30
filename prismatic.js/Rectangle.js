@@ -6,7 +6,7 @@ var Rectangle = new JS.Class(Drawable, {
     	this.width = argObj.width || 100;
     	this.strokeColor = argObj.strokeColor || 'black';
     	this.strokeWidth = argObj.strokeWidth || 1;
-    	this.fillColor = argObj.fillColor || 'red';
+    	this.fillColor = argObj.fillColor || '#ddaaff';
     },
 
 	draw: function(context) {

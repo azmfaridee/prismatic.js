@@ -21,5 +21,10 @@ JS.Packages(function() {
             .provides('Line')
             .requires('Prismatic')
             .requires('Drawable');
+
+        file('prismatic.js/Circle.js')
+            .provides('Circle')
+            .requires('Prismatic')
+            .requires('Drawable');
     }
 });

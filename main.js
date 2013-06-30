@@ -4,7 +4,8 @@ JS.require('JS.Hash',
 	'Drawable',
 	'Layer',
 	'Rectangle',
-	'Line', function() {
+	'Line',
+	'Circle', function() {
 	
 	prismatic.configure({
 		canvasId: 'myCanvas',
@@ -41,6 +42,21 @@ JS.require('JS.Hash',
 		strokeWidth: 4
 	});
 	baseLayer.addDrawable(line);
+
+	var circle = new Circle({
+		x: 100,
+		y: 100,
+		radius: 100,
+		fillColor: '#223377'
+	});
+	baseLayer.addDrawable(circle);
+
+	// howto add empty lines 
+	// var line2 = new Line({});
+	// baseLayer.addDrawable(line2);
+	// // empty rectangles
+	// var rect2 = new Rectangle({});
+	// baseLayer.addDrawable(rect2);
 
 	prismatic.addLayer(baseLayer);
 	console.log('TAKING PRISMATIC CORE OFFLINE!!');
