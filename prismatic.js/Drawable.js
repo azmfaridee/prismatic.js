@@ -14,13 +14,12 @@ var Drawable = new JS.Class({
     },
 
 	setProperty: function(argObj) {
-		// will be used to set any custom property		
 		this.x = argObj.x;
 		this.y = argObj.y;
 		this.position = argObj.position;
 	},
 
 	changeLayer: function(argObj) {
-
+		// TODO finish this function
 	},
 });

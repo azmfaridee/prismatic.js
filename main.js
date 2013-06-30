@@ -16,32 +16,32 @@ JS.require('JS.Hash',
 
 	var baseLayer = new Layer();
 
-	// var rect = new Rectangle({
-	// 	x: 100,
-	// 	y: 100,
-	// 	height: 100,
-	// 	width: 100,
-	// 	fillColor: 'red',
-	// 	strokeColor: 'blue',
-	// 	strokeWidth: 2
-	// });
-	// rect.setProperty({
-	// 	x: 200,
-	// 	y: 200,
-	// 	position: 'absolute'
-	// });
-	// console.log(JSON.stringify(rect, null, 2));
-	// baseLayer.add(rect);
+	var rect = new Rectangle({
+		x: 100,
+		y: 100,
+		height: 100,
+		width: 200,
+		fillColor: '#aa6633',
+		strokeColor: 'green',
+		strokeWidth: 4
+	});
+	rect.setProperty({
+		x: 200,
+		y: 200,
+		position: 'absolute'
+	});
+	baseLayer.addDrawable(rect);
 
 	var line = new Line({
 		x: 100,
 		y: 150,
 		x2: 450,
 		y2: 50,
-		strokeColor: 'blue',
-		strokeWidth: 2
+		strokeColor: '#aa6633',
+		strokeWidth: 4
 	});
 	baseLayer.addDrawable(line);
+
 	prismatic.addLayer(baseLayer);
 
 	console.log('TAKING PRISMATIC CORE OFFLINE!!');

@@ -11,5 +11,15 @@ var Rectangle = new JS.Class(Drawable, {
 
 	draw: function(context) {
 		this.callSuper(context);
+
+		context.beginPath();
+
+		context.rect(this.x, this.y, this.width, this.height);
+		context.fillStyle = this.fillColor;
+		context.fill();
+		context.lineWidth = this.strokeWidth;
+		context.strokeStyle = this.strokeColor;
+		
+		context.stroke();
 	},
 });
