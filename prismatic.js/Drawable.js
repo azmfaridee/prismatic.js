@@ -22,5 +22,16 @@ var Drawable = new JS.Class({
 
 	changeLayer: function(argObj) {
 		// TODO finish this function
+
+		// ALGO BEING
+		// get parent reference
+		// remove itself form it's parent
+		// add itself to new layer
+		// ALGO END
 	},
+
+	hitTest: function(event) {},
+
+	onClick: function(event) {}
+
 });

@@ -51,14 +51,26 @@ var Prismatic = new JS.Class({
             }
             requestAnimationFrame(render)
         }
-
         render();
+
+        // TODO: need to externalize this code segment
+        canvas.addEventListener('click', function (event) {
+            for (var i = 0; i < layers.length; i++) {
+                layers[i].onClick(event);
+            }
+        });
     },
 
     addLayer: function(layer) {
     	this.layers.push(layer);
         layer.parent = this;
-    	// TODO: sort layers according to depth
+
+    	// sort layers according to depth, a layer with 
+        // higher depth valued layer will be drawn later, will
+        // stay on top
+        this.layers.sort(function (layer1, layer2) {
+            return (layer1.depth - layer2.depth);
+        });
     }
 });
 
