@@ -34,6 +34,7 @@ var Drawable = new JS.Class({
 
 	hitTest: function(event) {},
 
+	// todo, need to fix this
 	onClick: function(event) {
 		console.log('clicked');
 	},

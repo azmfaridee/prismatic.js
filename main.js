@@ -7,6 +7,9 @@ JS.require('JS.Hash',
 	'Line',
 	'Circle', function() {
 	
+	/* 
+		This is a must
+	*/
 	prismatic.configure({
 		canvasId: 'myCanvas',
 		width: 640,

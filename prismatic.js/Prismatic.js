@@ -1,62 +1,72 @@
 var Prismatic = new JS.Class({
+
 	initialize: function() {
     	this.canvasId = null;
         this.canvas = null;
     	this.width = 640;
     	this.height = 480;
-    	this.backgroundColor = 'white';
     	this.frameRate = 24;
     	this.layers = [];
         this.context = null;
         this.timePerFrame = null;
-
-        // requestAnimationFrame function init
-        // TODO: need to update this with a fail safe funciton implementation
-        (function() {
-            var requestAnimationFrame = window.requestAnimationFrame || window.mozRequestAnimationFrame || window.webkitRequestAnimationFrame || window.msRequestAnimationFrame;
-        window.requestAnimationFrame = requestAnimationFrame;
-        })();
 	},
+
+    setupRequestAnimationFrame: function() {
+        var requestAnimationFrame = window.requestAnimationFrame || 
+            window.mozRequestAnimationFrame || window.webkitRequestAnimationFrame || 
+            window.msRequestAnimationFrame || function (callback) {
+                window.setTimeout(callback, this.timePerFrame);
+            };
+        window.requestAnimationFrame = requestAnimationFrame;
+    },
 
     /*
         this function must allways be called
+        TODO: need to have try catch mechanism so that when this function is
+        not called, the system throws an error
     */
     configure: function(argObj) {
+        this.setupRequestAnimationFrame();
+
     	this.canvasId = argObj.canvasId;
     	this.width = argObj.width;
     	this.height = argObj.height;
     	this.backgroundColor = argObj.backgroundColor;
     	this.frameRate = argObj.frameRate;
 
-    	// init the canvas
-        var canvas = this.canvas = document.getElementById(this.canvasId);
-        canvas.height = this.height;
-        canvas.width = this.width;
-        var context = this.context = this.canvas.getContext('2d');
+        this.canvas = document.getElementById(this.canvasId);
+        this.canvas.height = this.height;
+        this.canvas.width = this.width;
+        this.context = this.canvas.getContext('2d');
 
-    	// init the frame rate
         this.timePerFrame = Math.round(100000 / this.frameRate) / 100;
 
-    	// init the layer
-        // TODO: need to sort the layers according to their depth
-
-        // the main drawing loop by using the layers
-        // need to call this one with requestAnimationFrame() over and over
         var layers = this.layers;
+
+        this.initializeRenderer();
+        this.initializeEventListeners();
+    },
+
+    initializeRenderer: function() {
+        var that = this;
         function render() {
-            context.clearRect(0, 0, canvas.width, canvas.height);
-            // redraw everything
-            for (var i = 0; i < layers.length; i++) {
-                layers[i].draw(context);
+            // TODO: saving and restoring of transformation matrix for more reliable clearing
+            // http://stackoverflow.com/questions/2142535/how-to-clear-the-canvas-for-redrawing
+            that.context.clearRect(0, 0, that.canvas.width, that.canvas.height);
+            for (var i = 0; i < that.layers.length; i++) {
+                that.layers[i].draw(that.context);
             }
             requestAnimationFrame(render)
         }
         render();
+    },
 
-        // TODO: need to externalize this code segment
-        canvas.addEventListener('click', function (event) {
-            for (var i = 0; i < layers.length; i++) {
-                layers[i].onClick(event);
+    initializeEventListeners: function() {
+        // TODO: other event types and listeners
+        var that = this;
+        this.canvas.addEventListener('click', function (event) {
+            for (var i = 0; i < that.layers.length; i++) {
+                that.layers[i].onClick(event);
             }
         });
     },
@@ -76,4 +86,3 @@ var Prismatic = new JS.Class({
 
 window.prismatic = new Prismatic();
 console.log('PRISMATIC CORE ONLINE!');
-
