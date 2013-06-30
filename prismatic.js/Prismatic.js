@@ -8,6 +8,12 @@ var Prismatic = new JS.Class({
     	this.frameRate = 24;
     	this.layers = [];
         this.context = null;
+
+        // requestAnimationFrame function init
+        (function() {
+            var requestAnimationFrame = window.requestAnimationFrame || window.mozRequestAnimationFrame || window.webkitRequestAnimationFrame || window.msRequestAnimationFrame;
+        window.requestAnimationFrame = requestAnimationFrame;
+        })();
 	},
 
     configure: function(argObj) {
