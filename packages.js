@@ -1,12 +1,5 @@
 JS.Packages(function() { 
 	with(this) {
-	    file('Animal.js')
-	        .provides('Animal');
-
-	    file('Cat.js')
-	        .provides('Cat')
-	        .requires('Animal');
-
         file('prismatic.js/Prismatic.js')
         	.provides('Prismatic');
 
