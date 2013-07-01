@@ -28,10 +28,10 @@ var Layer = new JS.Class(Drawable, {
 	removeDrawable: function(argObj) {
 	},
 
-	onClick: function(event) {
+	onClick: function(eventObj) {
 		for (var i = 0; i < this.drawables.length; i++) {
-			if (this.drawables[i].performHitTest(event) === true) {
-				this.drawables[i].onClick(event);	
+			if (this.drawables[i].performHitTest(eventObj) === true) {
+				this.drawables[i].onClick(eventObj);	
 			}
 		}
 	},

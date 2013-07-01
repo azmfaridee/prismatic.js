@@ -7,8 +7,7 @@ var Drawable = new JS.Class({
     	this.position = argObj.position || 'absolute';
     	this.x = argObj.x || 0;
     	this.y = argObj.y || 0;
-    	this.parent = argObj.parent || null;
-
+    	// this.parent = argObj.parent || null;
     	this.eventListeners = {};
     },
 
@@ -32,11 +31,11 @@ var Drawable = new JS.Class({
 		// ALGO END
 	},
 
-	performHitTest: function(event) {
+	performHitTest: function(eventObj) {
 		return false;
 	},
 
-	onClick: function(event) {
+	onClick: function(eventObj) {
 		var callback = function () {};
 		var argObj = {}
 		if (this.eventListeners.click !== undefined) {

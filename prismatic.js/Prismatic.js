@@ -41,6 +41,8 @@ var Prismatic = new JS.Class({
 
         this.timePerFrame = Math.round(100000 / this.frameRate) / 100;
 
+        // console.log(this.timePerFrame);
+
         var layers = this.layers;
 
         this.initializeRenderer();
@@ -63,38 +65,40 @@ var Prismatic = new JS.Class({
 
     initializeEventListeners: function() {
         var that = this;
-        this.canvas.addEventListener('click', function (event) {
-            // console.log('click (' + event.x + ', ' + event.y + ')');
+        this.canvas.addEventListener('click', function (eventObj) {
+            // console.log('click (' + eventObj.x + ', ' + eventObj.y + ')');
+            // console.log(that.context);
+            // console.log(eventObj);
             for (var i = 0; i < that.layers.length; i++) {
-                if (that.layers[i].performHitTest(event) === true) {
-                    that.layers[i].onClick(event);    
+                if (that.layers[i].performHitTest(eventObj) === true) {
+                    that.layers[i].onClick(eventObj);    
                 }
             }
         });
 
-        this.canvas.addEventListener('mousemove', function (event) {
-            // console.log('mousemove (' + event.x + ', ' + event.y + ')');
+        this.canvas.addEventListener('mousemove', function (eventObj) {
+            // console.log('mousemove (' + eventObj.x + ', ' + eventObj.y + ')');
         });
-
+        
         /*
 
         // Other helpful event listeners, we don't need to enable them for the
         // time being
 
-        this.canvas.addEventListener('mousedown', function (event) {
-            // console.log('mousedown (' + event.x + ', ' + event.y + ')');
+        this.canvas.addEventListener('mousedown', function (eventObj) {
+            // console.log('mousedown (' + eventObj.x + ', ' + eventObj.y + ')');
         });
 
-        this.canvas.addEventListener('mouseup', function (event) {
-            // console.log('mouseup (' + event.x + ', ' + event.y + ')');
+        this.canvas.addEventListener('mouseup', function (eventObj) {
+            // console.log('mouseup (' + eventObj.x + ', ' + eventObj.y + ')');
         });
 
-        this.canvas.addEventListener('mouseover', function (event) {
-            console.log('mouseover (' + event.x + ', ' + event.y + ')');
+        this.canvas.addEventListener('mouseover', function (eventObj) {
+            console.log('mouseover (' + eventObj.x + ', ' + eventObj.y + ')');
         });
 
-        this.canvas.addEventListener('mouseout', function (event) {
-            console.log('mouseout (' + event.x + ', ' + event.y + ')');
+        this.canvas.addEventListener('mouseout', function (eventObj) {
+            console.log('mouseout (' + eventObj.x + ', ' + eventObj.y + ')');
         });
 
         */

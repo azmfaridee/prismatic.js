@@ -23,9 +23,9 @@ var Rectangle = new JS.Class(Drawable, {
 		context.stroke();
 	},
 
-	performHitTest: function (event) {
-		var hitX = event.x;
-		var hitY = event.y;
+	performHitTest: function (eventObj) {
+		var hitX = eventObj.x;
+		var hitY = eventObj.y;
 		if (hitX > this.x && hitX < (this.width + this.x) && hitY > this.y && hitY < (this.height + this.y)) {
 			return true;
 		}
