@@ -1,5 +1,4 @@
 var Circle = new JS.Class(Drawable, {
-	// constructor
     initialize: function(argObj) {
     	this.callSuper(argObj);
 
@@ -23,14 +22,12 @@ var Circle = new JS.Class(Drawable, {
 	},
 
 	performHitTest: function (eventObj) {
-		// console.log(eventObj);
-		// console.log(this);
-		var hitX = eventObj.x;
-		var hitY = eventObj.y;
-		if (Math.pow(hitY - this.x, 2) + Math.pow(hitY - this.y, 2) < Math.pow(this.radius, 2)) {
-			// console.log('inside');
-			return true;
-		}
-		return false;
+		var that = this;
+		return this.callSuper(eventObj, function(hitX, hitY) {
+			if (Math.pow(hitX - that.x, 2) + Math.pow(hitY - that.y, 2) < Math.pow(that.radius, 2)) {
+				return true;
+			}
+			return false;	
+		});
 	}
 });

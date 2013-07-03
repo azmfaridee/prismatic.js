@@ -36,7 +36,7 @@ var Layer = new JS.Class(Drawable, {
 		}
 	},
 
-	performHitTest: function () {
+	performHitTest: function (eventObj) {
 		return true;
 	}
 });

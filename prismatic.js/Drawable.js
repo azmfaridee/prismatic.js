@@ -31,8 +31,14 @@ var Drawable = new JS.Class({
 		// ALGO END
 	},
 
-	performHitTest: function(eventObj) {
-		return false;
+	performHitTest: function(eventObj, callback) {
+		if (callback === undefined) {
+			return false;
+		}
+		// eventObj.srcElement points to current canvas
+		var hitX = eventObj.x - eventObj.srcElement.offsetLeft;
+		var hitY = eventObj.y - eventObj.srcElement.offsetTop;
+		return callback(hitX, hitY);
 	},
 
 	onClick: function(eventObj) {

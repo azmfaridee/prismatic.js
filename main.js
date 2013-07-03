@@ -87,6 +87,8 @@ JS.require('JS.Hash',
 	prismatic.addLayer(baseLayer);
 	prismatic.addLayer(upperLayer);
 
-	console.log(circle);
+	// console.log(circle);
+	// console.log(rect);
+	// console.log(prismatic);
 	console.log('TAKING PRISMATIC CORE OFFLINE!!');
 });

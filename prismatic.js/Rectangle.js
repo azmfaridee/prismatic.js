@@ -24,11 +24,12 @@ var Rectangle = new JS.Class(Drawable, {
 	},
 
 	performHitTest: function (eventObj) {
-		var hitX = eventObj.x;
-		var hitY = eventObj.y;
-		if (hitX > this.x && hitX < (this.width + this.x) && hitY > this.y && hitY < (this.height + this.y)) {
-			return true;
-		}
-		return false;
+		var that = this;
+		return this.callSuper(eventObj, function(hitX, hitY) {
+			if (hitX > that.x && hitX < (that.width + that.x) && hitY > that.y && hitY < (that.height + that.y)) {
+				return true;
+			}
+			return false;
+		});
 	},
 });

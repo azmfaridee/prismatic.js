@@ -69,6 +69,8 @@ var Prismatic = new JS.Class({
             // console.log('click (' + eventObj.x + ', ' + eventObj.y + ')');
             // console.log(that.context);
             // console.log(eventObj);
+            // console.log(that.canvas.offsetLeft);
+            // console.log(that.canvas.offsetTop);
             for (var i = 0; i < that.layers.length; i++) {
                 if (that.layers[i].performHitTest(eventObj) === true) {
                     that.layers[i].onClick(eventObj);    
