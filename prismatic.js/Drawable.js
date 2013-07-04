@@ -9,6 +9,7 @@ var Drawable = new JS.Class({
     	this.y = argObj.y || 0;
     	// this.parent = argObj.parent || null;
     	this.eventListeners = {};
+        this.uniqueName = 'Drawable';
     },
 
     draw: function(context) {

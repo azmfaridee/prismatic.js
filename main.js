@@ -15,7 +15,7 @@ JS.require('JS.Hash',
 		width: 640,
 		height: 480,
 		backgroundColor: 'white',
-		frameRate: 24,
+		frameRate: 24
 	});
 
 	var baseLayer = new Layer({
@@ -87,8 +87,8 @@ JS.require('JS.Hash',
 	prismatic.addLayer(baseLayer);
 	prismatic.addLayer(upperLayer);
 
-	// console.log(circle);
-	// console.log(rect);
-	// console.log(prismatic);
+    console.log(circle);
+//	console.log(rect);
+	console.log(prismatic);
 	console.log('TAKING PRISMATIC CORE OFFLINE!!');
 });

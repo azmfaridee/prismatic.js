@@ -9,15 +9,15 @@ var Prismatic = new JS.Class({
     	this.layers = [];
         this.context = null;
         this.timePerFrame = null;
+        this.uniqueName = 'Prismatic';
 	},
 
     setupRequestAnimationFrame: function() {
-        var requestAnimationFrame = window.requestAnimationFrame || 
-            window.mozRequestAnimationFrame || window.webkitRequestAnimationFrame || 
+        window.requestAnimationFrame = window.requestAnimationFrame ||
+            window.mozRequestAnimationFrame || window.webkitRequestAnimationFrame ||
             window.msRequestAnimationFrame || function (callback) {
-                window.setTimeout(callback, this.timePerFrame);
-            };
-        window.requestAnimationFrame = requestAnimationFrame;
+            window.setTimeout(callback, this.timePerFrame);
+        };
     },
 
     /*

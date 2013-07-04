@@ -11,6 +11,7 @@ var Layer = new JS.Class(Drawable, {
 
 		this.depth = argObj.depth || 0;
 		this.drawables = [];
+        this.uniqueName = 'Layer';
 	},
 
 	draw: function(context) {

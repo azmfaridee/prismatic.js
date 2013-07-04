@@ -6,6 +6,7 @@ var Line = new JS.Class(Drawable, {
         this.y2 = argObj.y2 | 50;
         this.strokeColor = argObj.strokeColor || 'black';
         this.strokeWidth = argObj.strokeWidth || 1;
+        this.uniqueName = 'Line';
     },
 
 	draw: function(context) {
@@ -24,5 +25,5 @@ var Line = new JS.Class(Drawable, {
 
     performHitTest: function (eventObj) {
         return false;
-    },
+    }
 });
